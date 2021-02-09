@@ -110,7 +110,22 @@ public:
      */
     uint8_t PollSPS30();
     
+    /** Stop Auto-Measurement 
+     *
+     * @param --none--
+     *
+     * @return enum SPSerror
+     */
+    uint8_t StopMeasurement();
  
+    /** Perform a soft reset
+     *
+     * @param --none--
+     *
+     * @return enum SPSerror
+     */
+    uint8_t SoftReset();
+
 private:
 
     enum SPSError {
@@ -169,13 +184,7 @@ private:
      */
     uint8_t StartMeasurement();
     
-    /** Stop Auto-Measurement 
-     *
-     * @param --none--
-     *
-     * @return enum SPSerror
-     */
-    uint8_t StopMeasurement();
+
     
     /** Get Ready Status register 
      *
@@ -248,13 +257,7 @@ private:
     uint8_t StartFanClean();
     
 
-    /** Perform a soft reset
-     *
-     * @param --none--
-     *
-     * @return enum SPSerror
-     */
-    uint8_t SoftReset();
+
  
 protected:
     I2C*     _i2c;    
